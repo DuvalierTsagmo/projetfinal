@@ -18,6 +18,7 @@ from django.urls import path, include
 from quickstart import views
 from rest_framework import routers
 
+#mon router par defaut
 router = routers.DefaultRouter()
 router.register(r'Microcontroleur', views.MicrocontroleurViewSet)
 
