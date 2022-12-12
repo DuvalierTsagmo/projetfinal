@@ -27,14 +27,14 @@ def Micro(request):
       Microcontroleur.objects.all().delete()
       return HttpResponse('<h1>Success</h1>')   
     if request.method == 'GET':
-        is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
-        if is_ajax:
-            todos = list(Microcontroleur.objects.all().values())
-            return JsonResponse({'context': todos})
+        #is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
+        #if is_ajax:
+            #todos = list(Microcontroleur.objects.all().values())
+            #return JsonResponse({'context': todos})
 
-        #data = Microcontroleur.objects.all()
-        #dataJson = MicrocontroleurSerializer(data, many = True)
-        #return JsonResponse(dataJson.data, safe=False)  
+        data = Microcontroleur.objects.all()
+        dataJson = MicrocontroleurSerializer(data, many = True)
+        return JsonResponse(dataJson.data, safe=False)  
 
 class MicrocontroleurViewSet(viewsets.ModelViewSet):
     """
