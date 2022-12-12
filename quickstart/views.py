@@ -22,9 +22,10 @@ def Micro(request):
       microcontroleur.nom = uC
       microcontroleur.modele = Valeur
       microcontroleur.serie = Date
+      #Microcontroleur.objects.all().delete()
       microcontroleur.save()
-      #enregistre la derniere donnes capteer
-      Microcontroleur.objects.all().delete()
+      #enregistre la derniere donnes capteur
+      
       return HttpResponse('<h1>Success</h1>')   
     if request.method == 'GET':
         #is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
